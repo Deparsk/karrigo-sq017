@@ -33,6 +33,6 @@ jobs:
     - name: Dockerize SpringBoot Application
       run: |
         docker build -t karri-go-be .
-        docker tag simple-project deparsk/karri-go-be:latest
+        docker tag karri-go-be deparsk/karri-go-be:latest
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
         docker push deparsk/karri-go-be:latest
