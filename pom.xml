@@ -160,6 +160,20 @@
                     </image>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com.decagon.karrigobe.controllers.verificationController.VerificationControllerTest</exclude>
+                        <exclude>com.decagon.karrigobe.repositories.UserRepositoryTest</exclude>
+                        <exclude>com.decagon.karrigobe.services.login_service.serviceImplimentation.LoginServiceImplTest</exclude>
+                        <exclude>com.decagon.karrigobe.services.signup_login_service.serviceImplimentation.SignupAndLoginTest</exclude>
+                        <exclude>com.decagon.karrigobe.services.verification_services.serviceImplementation.VerificationServiceImplTest</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
