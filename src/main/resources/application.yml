@@ -10,6 +10,7 @@ spring:
         cloudSqlInstance: karrigo-java017:us-central1:karri-go-db
 
 
+
   jpa:
     properties:
       hibernate:
