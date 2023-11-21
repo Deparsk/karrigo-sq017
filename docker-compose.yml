@@ -19,7 +19,7 @@
       postgres:
         image: postgres
         ports:
-          - "5452:5434"
+          - "5452"
         environment:
           - POSTGRES_PASSWORD=password
           - POSTGRES_USER=postgres
