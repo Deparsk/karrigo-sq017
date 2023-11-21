@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: karrigo
+spec:
+  template:
+    spec:
+      containers:
+        - image: -t https://hub.docker.com/r/deparsk/karri-go-be
+          env:
+            - name: PORT
+              value: "8085"
+      serviceAccountName: karrigo-service

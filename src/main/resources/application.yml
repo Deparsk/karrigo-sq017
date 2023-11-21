@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/karri_go_db
+    url: jdbc:postgresql://localhost:5431/karri_go_db
     username: postgres
     password: password
 
-    hikari:
-      data-source-properties:
-        socketFactory: com.google.cloud.sql.mysql.SocketFactory
-        cloudSqlInstance: karrigo-java017:us-central1:karri-go-db
+#    hikari:
+#      data-source-properties:
+#        socketFactory: com.google.cloud.sql.mysql.SocketFactory
+#        cloudSqlInstance: karrigo-java017:us-central1:karri-go-db
 
 
 
