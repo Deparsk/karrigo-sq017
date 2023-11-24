@@ -1,0 +1,36 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/karrigo-sq017:$COMMIT_SHA', '.']
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/karrigo-sq017:$COMMIT_SHA']
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'karrigo-sq017'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/karrigo-sq017:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+images:
+  - 'gcr.io/$PROJECT_ID/karrigo-sq017:$COMMIT_SHA'
+
+
+#steps:
+#  # Build the container image
+#  - name: 'gcr.io/cloud-builders/docker'
+#    args: ['build', '-t', 'gcr.io/karrigo-java017/karri-go-be', '.']
+#  # Push the container image to Container Registry
+#  - name: 'gcr.io/cloud-builders/docker'
+#    args: ['push', 'gcr.io/karrigo-java017/karri-go-be']
+#  # Deploy container image to Cloud Run
+#  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#    entrypoint: gcloud
+#    args: ['run', 'deploy', 'karrigo-sq017', '--image', 'gcr.io/karrigo-java017/karri-go-be', '--region', 'us-central1']
+#images:
+#  - gcr.io/karrigo-java017/karri-go-be
+

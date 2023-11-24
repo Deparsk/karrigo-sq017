@@ -60,6 +60,7 @@ server:
   port: 8086
 
 
+
 cloudinary:
   name: ${CLOUDINARY_NAME}
   api_key: ${CLOUDINARY_API_KEY}
