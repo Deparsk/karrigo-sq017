@@ -7,7 +7,7 @@
           context: .
           dockerfile: Dockerfile
         ports:
-          - "8085:8085"
+          - "8081:8081"
         environment:
           - EMAIL_USERNAME=${EMAIL_USERNAME}
           - EMAIL_PASSWORD=${EMAIL_PASSWORD}
